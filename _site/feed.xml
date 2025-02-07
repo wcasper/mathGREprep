@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-01-12T14:32:28-08:00</updated><id>/feed.xml</id><title type="html">Math 407 Spring 2021</title><subtitle>Supplementary notes for a semester-long course in abstract algebra covering group theory and Galois theory.
+</subtitle><author><name>William Casper</name><email>wcasper@fullerton.edu</email></author><entry><title type="html">Part 1 Intro To Groups</title><link href="/2021/01/21/part-1-intro-to-groups.html" rel="alternate" type="text/html" title="Part 1 Intro To Groups" /><published>2021-01-21T00:00:00-08:00</published><updated>2021-01-21T00:00:00-08:00</updated><id>/2021/01/21/part-1-intro-to-groups</id><content type="html" xml:base="/2021/01/21/part-1-intro-to-groups.html">&lt;h2 id=&quot;examples-of-groups&quot;&gt;Examples of Groups&lt;/h2&gt;
+
+&lt;h3 id=&quot;intuition&quot;&gt;Intuition&lt;/h3&gt;
+
+&lt;p&gt;Fundamentally, a group can be thought of as an abstract way of capturing mathematically a collection of ways that we can “transform” a particular object.  To help make sense of this, think for a second about a deck of playing cards.  We can transform the deck by rearranging the cards.  For example, we can “cut the deck” by switching the top 26 and bottom 26 cards.  Alternatively, to transform the deck we could take all the cards and sort them into their various suits in increasing order, and then stack them back together again.
+We put all of these different transformations into a set&lt;/p&gt;
+
+\[G = \{g| g\ \text{is a way of rearranging a deck of $52$ cards}\}\]
+
+&lt;p&gt;and this set is what we will call a group.  Formally, what we mean by rearrangments is bijections from the set of \(52\) playing cards to itself.  The group we just described is a very nice example, called a permutation group.  By studying properties of this group, we can answer very interesting questions such as &lt;a href=&quot;https://www.ams.org/publicoutreach/feature-column/fcarc-shuffle&quot;&gt;how many shuffles does it take to randomize a deck of cards&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Of course, not every rickety assortment of transformations can be awarded the distinction of being a group.  We have standards after all!  The notion of what should distinguish a group from other sets of transformations arose simultaneously from three different areas of mathematics: symmetries in geometry, solutions of algebraic equations, and number theory.  Thus groups are defined so as to link together shared properties of the objects coming from these diverse subjects.  Informally, we should think of a group \(G\) as a set of transformations \(G\) which satisfies the following properties&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;the composition of two transformations in \(G\) (ie. doing one transformation and then another) is in \(G\)&lt;/li&gt;
+  &lt;li&gt;composition is associative&lt;/li&gt;
+  &lt;li&gt;every transformation in \(G\) is reversible by another transformation in \(G\)
+In the general setting, we can even drop the idea of the group elements being transformations.  We simply replace the notion of composition with some multiplicative or additive operation.  Later on, we’ll describe this as a &lt;strong&gt;binary operation&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Below, we will explore some examples of groups representative of their historical origins.  In the first example, we again deal with a collection of transformations.  In the latter two examples, we think about the more general notion of a group as a set with a way of either multiplying or adding which is sufficiently nice.&lt;/p&gt;
+
+&lt;h3 id=&quot;more-examples-of-groups&quot;&gt;More examples of groups&lt;/h3&gt;
+&lt;h4 id=&quot;symmetries-in-geometry&quot;&gt;Symmetries in geometry&lt;/h4&gt;
+&lt;p&gt;To begin, let’s think about the filled-in square \(\mathcal S = [-1,1]\times[-1,1]\) centered at the origin.  A &lt;strong&gt;(linear) symmetry&lt;/strong&gt; of \(\mathcal S\) is a linear transformation \(T: \mathbb R^2\rightarrow\mathbb R^2\) which maps \(\mathcal S\) to itself.  For example, rotations are linear transformations and rotation by \(90\) degrees preserves the square, so a \(90\)-degree clockwise rotation is a symmetry of \(\mathcal S\).  This transformation can be represented as a function&lt;/p&gt;
+
+\[T(x,y) = (y,-x)\]
+
+&lt;p&gt;or in terms of a \(2\times 2\) matrix&lt;/p&gt;
+
+\[\left(\begin{array}{cc}
+0&amp;amp; 1\\
+-1 &amp;amp; 0
+\end{array}\right).\]
+
+&lt;p&gt;The set \(G\) of all symmetries of \(\mathcal S\) consists (in matrix notation) of&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;identity&lt;/li&gt;
+&lt;/ul&gt;
+
+\[\left(\begin{array}{cc}
+1 &amp;amp; 0\\
+0 &amp;amp; 1
+\end{array}\right)\]
+
+&lt;ul&gt;
+  &lt;li&gt;rotations&lt;/li&gt;
+&lt;/ul&gt;
+
+\[\left(\begin{array}{cc}
+0&amp;amp; 1\\
+-1 &amp;amp; 0
+\end{array}\right),\quad
+\left(\begin{array}{cc}
+-1&amp;amp; 0\\
+ 0&amp;amp;-1
+\end{array}\right),\quad
+\left(\begin{array}{cc}
+0&amp;amp;-1\\
+1 &amp;amp; 0
+\end{array}\right)\]
+
+&lt;ul&gt;
+  &lt;li&gt;reflections&lt;/li&gt;
+&lt;/ul&gt;
+
+\[\left(\begin{array}{cc}
+1 &amp;amp; 0\\
+0 &amp;amp;-1
+\end{array}\right),\quad
+\left(\begin{array}{cc}
+-1&amp;amp; 0\\
+ 0&amp;amp; 1
+\end{array}\right),\quad
+\left(\begin{array}{cc}
+0 &amp;amp; 1\\
+1 &amp;amp; 0
+\end{array}\right),\quad
+\left(\begin{array}{cc}
+ 0 &amp;amp; -1\\
+-1 &amp;amp; 0
+\end{array}\right).\]
+
+&lt;p&gt;This collection of \(8\) matrices forms a group, sometimes called the &lt;strong&gt;dihedral group&lt;/strong&gt; \(D_4\).  More generally, one can consider the group of symmetries of an \(n\)-gon on the plane, obtaining the dihedral group \(D_n\).  In fact, we can extend this to higher dimensions and consider the symmetry groups of various polytopes, forming even more interesting groups.&lt;/p&gt;
+
+&lt;h4 id=&quot;solutions-of-algebraic-equations&quot;&gt;Solutions of algebraic equations&lt;/h4&gt;
+&lt;p&gt;Consider the set \(G\) of complex-valued solutions of an algebraic equation \(z^n=1\).  If \(z=a\) is a solution (ie. \(a^n=1\)), and \(z=b\) is also a solution, then \((ab)^n = a^nb^n=1\cdot 1 = 1\) and therefore \(z = ab\) is also a solution.  Furthermore if \(a\in G\) then \((1/a)^n = 1/a^n = 1\) and so \(z=1/a\) is a solution.  In other words, if \(a,b\in G\) then \(ab\in G\) and if \(a\in G\) then \(a^{-1}\in G\).  Thus \(G\) is a group.&lt;/p&gt;
+
+&lt;p&gt;More generally, we can think about the set of roots of any polynomial equation \(p(z) = 0\).  Associated to any such equation is a very special group called the &lt;a href=&quot;https://en.wikipedia.org/wiki/Galois_group&quot;&gt;Galois Group&lt;/a&gt;, which we will discuss later in this course.&lt;/p&gt;
+
+&lt;h4 id=&quot;number-theory&quot;&gt;Number theory&lt;/h4&gt;
+&lt;p&gt;One of the foundations of number theory is a clockwork-style addition for numbers called &lt;strong&gt;modular arithmetic&lt;/strong&gt;.  To begin, fix a positive integer \(n\) and consider the set&lt;/p&gt;
+
+\[\mathbb Z_n = \{0,1,2,3,\dots,n-1\}.\]
+
+&lt;p&gt;We define &lt;strong&gt;modular addition&lt;/strong&gt; on \(\mathbb Z_n\) by setting&lt;/p&gt;
+
+\[a +_n b = \text{remainder after dividing $a+b$ by $n$}.\]
+
+&lt;p&gt;This makes \(\mathbb Z_n\) into a group.  So for example&lt;/p&gt;
+
+\[\begin{align*}
+2 +_5 3 &amp;amp;= 0\\
+8 +_2 5 &amp;amp;= 1\\
+4 +_7 9 &amp;amp;= 6.
+\end{align*}\]
+
+&lt;p&gt;Note: the notation we use here is consistent with Fraleigh’s text, but is not the usual notation for this operation.  The latter is typically framed in terms of the notion of a &lt;strong&gt;quotient group&lt;/strong&gt;, a topic of later discussion.&lt;/p&gt;
+
+&lt;p&gt;This kind of weird addition is actually very intuitive if we think about how hours work on a clock.  If it’s currently 10:00 then in three hours it will be 1:00.  Fourteen hours after that, it will be 3:00.  Thus mathematically, we’re discovring that clock-addition works just like addition modulo \(12\):&lt;/p&gt;
+
+\[\begin{align*}
+10 +_{12} 3 = 1\\
+1 +_{12} 14 = 3
+\end{align*}\]
+
+&lt;p&gt;We can also define a continuous form of modular addition for real numbers.  Fix a positive real number \(r&amp;gt;0\) and consider the set&lt;/p&gt;
+
+\[\mathbb R_r = [0,r).\]
+
+&lt;p&gt;We define modular addition on \(\mathbb R_r\) by setting&lt;/p&gt;
+
+\[a+_rb = \left\lbrace\begin{array}{cc}
+a+b, &amp;amp; \text{if $a+b&amp;lt;r$}\\
+a+b-r, &amp;amp; \text{if $a+b\geq r$}
+\end{array}\right.\]
+
+&lt;p&gt;Thus for example&lt;/p&gt;
+
+\[\begin{align*}
+\sqrt{2} +_3 2 &amp;amp;= \sqrt{2}-1\\
+4.3 +_5 + 2.1 &amp;amp;= 1.4
+\end{align*}\]
+
+&lt;p&gt;This defines a group, and we can look to the unit circle for intuition.  In the unit circle, if we have an angle of \(7\pi/4\) radians and then we add \(\pi/2\) radians, then we have gone one full circle (\(2\pi\) radians), plus a bit extra, ending up at \(\pi/4\) radians.  In other words, radians in the unit circle work like modular addition modulo \(2\pi\).&lt;/p&gt;
+
+\[7\pi/4 +_{2\pi} \pi/2 = \pi/4.\]
+
+&lt;p&gt;For this reason, we often identify \(\mathbb R_{2\pi}\) with the unit circle.&lt;/p&gt;</content><author><name>William Casper</name><email>wcasper@fullerton.edu</email></author><summary type="html">Examples of Groups</summary></entry><entry><title type="html">Part 2 Binary Operations</title><link href="/2021/01/21/part-2-binary-operations.html" rel="alternate" type="text/html" title="Part 2 Binary Operations" /><published>2021-01-21T00:00:00-08:00</published><updated>2021-01-21T00:00:00-08:00</updated><id>/2021/01/21/part-2-binary-operations</id><content type="html" xml:base="/2021/01/21/part-2-binary-operations.html">&lt;h2 id=&quot;binary-operators&quot;&gt;Binary Operators&lt;/h2&gt;
+&lt;h3 id=&quot;basic-definition-and-examples&quot;&gt;Basic Definition and Examples&lt;/h3&gt;
+&lt;p&gt;As we mentioned previously, a group is a set where you have some notion of a “product” (eg. multiplication or addition) and where that operation is sufficiently nice.  Mathematically, various products are described by special functions called binary operations.  This language is much nicer, since calling something like addition a product would be very confusing!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; Let \(G\) be a set.  A &lt;strong&gt;binary operation&lt;/strong&gt; \(*\) on \(G\) is a function \(G\times G\rightarrow G\) sending a pair of elements \((a,b)\) to their &lt;strong&gt;product&lt;/strong&gt; \(a*b\).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; Let \(G=\mathbb R\).  Then \(a*b = a+b\) defines a binary operation on \(G\).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; Let \(G=\mathbb R\).  Then \(a*b = ab\) defines a binary operation on \(G\).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; Let \(G=\mathbb R\).  Then \(a*b = a-b\) defines a binary operation on \(G\).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; Let \(G\) be the set of \(5\times 5\) matrices.  Then setting \(A*B\) to be the matrix product of the matrices \(A\) and \(B\) defines a binary operation on \(G\).&lt;/p&gt;
+
+&lt;p&gt;We do need to be a little careful when we are defining a binary operation \(*\) on a set \(G\).  We need to make sure that it is &lt;strong&gt;well defined&lt;/strong&gt;, meaning that for any \(a,b\in G\) the expression \(a*b\) is defined and unique.  We also need to be sure that \(G\) is &lt;strong&gt;closed under \(*\)&lt;/strong&gt;, meaning that the value of \(a*b\) also needs to always be in \(G\).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; Let \(G=\mathbb R\).  Then \(a*b = a/b\) does not define a binary operation on \(G\), because \(a*0\) is not defined.  In particular, \(*\) is not well-defined.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; Let \(G=\mathbb N\).  Then \(a*b = a-b\) does not define a binary operation on \(G\), because \(2*3=-1\) is not in \(\mathbb N\).  In particular, \(G\) is not closed under \(*\).&lt;/p&gt;
+
+&lt;h3 id=&quot;multiplication-tables&quot;&gt;Multiplication Tables&lt;/h3&gt;
+&lt;p&gt;When \(G\) is a finite set, we can encode the binary operation of a set \(G\) in terms of a &lt;strong&gt;multiplication table&lt;/strong&gt;.
+For example, if \(G = \{0,1,2,3,4\}\) with binary operator \(a*b = a+_5b\) then the multiplication table for \(G\) is&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&quot;properties-of-binary-operations&quot;&gt;Properties of Binary Operations&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Definition&lt;/strong&gt; A binary operation \(*\) on a group \(G\) is called&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;associative&lt;/strong&gt; if \((a*b)*c = a*(b*c)\) for all \(a,b,c\in G\)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;commutative&lt;/strong&gt; if \(a*b = b*a\) for all \(a,b\in G\)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For example, \(a*b=a+b\) and \(a*'b = a-b\) are two different binary operation on \(\mathbb R\).  The operation \(*\) is both associative and commutative, but \(*'\) is neither associative nor commutative.  In particular&lt;/p&gt;
+
+\[(1*1)*1 = (1-1)*1 = 0*1 = 0-1 = 1\quad\text{and}\quad 1*(1*1) = 1*(1-1) = 1*0 = 1-0 = 1.\]</content><author><name>William Casper</name><email>wcasper@fullerton.edu</email></author><summary type="html">Binary Operators Basic Definition and Examples As we mentioned previously, a group is a set where you have some notion of a “product” (eg. multiplication or addition) and where that operation is sufficiently nice. Mathematically, various products are described by special functions called binary operations. This language is much nicer, since calling something like addition a product would be very confusing!</summary></entry><entry><title type="html">Complex Review</title><link href="/2021/01/19/complex-review.html" rel="alternate" type="text/html" title="Complex Review" /><published>2021-01-19T00:00:00-08:00</published><updated>2021-01-19T00:00:00-08:00</updated><id>/2021/01/19/complex-review</id><content type="html" xml:base="/2021/01/19/complex-review.html">## Review of Complex Numbers
+### Basic Definition
+A **complex number** is a number of the form
+
+$$z = x + iy,\quad\text{where $x$ and $y$ are real-valued}.$$
+
+Here $$i$$ is a very special complex number, denoting the square root of a negative number $$i=\sqrt{-1}$$.  More generally, complex numbers of the form $$iy$$ for some $$y\in\mathbb R$$ are called **imaginary numbers**.  This is an absolutely horrible name, since it predisposes one to the notion that these numbers are unnatural or &quot;made up&quot;.  In fact, imaginary numbers and more generally complex numbers are just as natural and &quot;real&quot; as their real counterparts.
+
+Examples of complex numbers include $$2 + 3i$$ and $$\sqrt{2} + (-1)i$$.  The need for complex numbers arises naturally from the desire to find roots of polynomial equations.  An equation like $$z^2+1=0$$ has no solutions over the real numbers, but two solutions over the complex numbers, namely $$z=\pm i$$.  In fact, over the complex numbers the Fundamental Theorem of Algebra is true.
+
+**Fundamental Theorem of Algebra**:  Allowing for complex roots, any polynomal with $$p(z)$$ of degree $$n$$ has exactly $$n$$ has precisely $$n$$ roots, counting multiplicities.
+ 
+We can do all the usual operations with complex numbers
+- addition:
+
+$$(2 + 3i) + (5 + 7i) = 7 + 10i$$
+
+- subtraction:
+
+$$(2 + 3i) - (5 + 7i) = -2 - 4i$$
+
+- multiplication
+
+$$
+\begin{align*}
+(2 + 3i)\cdot (5 + 7i)
+  &amp; =  2\cdot 5 + 2\cdot 7i + 3i\cdot 5 + 3i\cdot 7i\\
+  &amp; =  10 + 14i + 15i + 21i^2\\
+  &amp; =  10 + 14i + 15i - 21\quad\text{(since $i^2=-1$)}\\
+  &amp; =  -11 + 29i
+\end{align*}
+$$
+
+- division
+
+$$
+\begin{align*}
+(2 + 3i) / (5 + 7i)
+  &amp; =  (2+3i)\cdot \frac{1}{5+7i}\\
+  &amp; =  (2+3i)\cdot \frac{1}{5+7i}\frac{5-7i}{5-7i}\\
+  &amp; =  (2+3i)\cdot \frac{5-7i}{(5+7i)(5-7i)}\\
+  &amp; =  (2+3i)\cdot \frac{5-7i}{74}\\
+  &amp; =  \frac{(2+3i)(5-7i)}{74}\\
+  &amp; =  \frac{31+i}{74}\\
+  &amp; =  \frac{31}{74} + \frac{1}{74}i
+\end{align*}
+$$
+
+The **complex conjugate** of a complex number $$z = x + iy$$ is $$\overline z = x-iy$$.  Note that we multiplied and divided by the complex conjugate of $$5+7i$$ above in order to o simplify the denominator.  
+
+### Geometric point of view
+Just as the real numbers are geometrically arranged into the real line $$\mathbb R$$, the complex numbers naturally form a plane $$\mathbb C$$ called the **complex plane**.  All planes look the same, so we're really looking at something identical to the $$x,y$$-plane $$\mathbb R^2$$.  A complex number $$x+iy$$ corresponds to the point $$(x,y)$$ in $$\mathbb R^2$$.
+The **norm of a complex number** is the distance of the point in the complex plane from the origin
+
+$$|x + iy| = \sqrt{x^2 + y^2}.$$
+
+The norm itself is very related to the complex conjugate via the relation
+$$z\overline z = |z|^2\quad\text{or equivalently}\quad (x+iy)(x-iy) = x^2 + y^2.$$
+In particular, a complex number times its complex conjugate is always a positive, real number.
+
+Polar coordinates also translates naturally into the language of complex numbers.
+Recall that a point $$(x,y)$$ in the complex plane can be rexpressed in polar coordinates as $$(r,\theta)$$ where here
+
+$$\begin{align*}
+x &amp; = r\cos(\theta)\\
+y &amp; = r\sin(\theta)
+\end{align*}$$
+
+In this same way, we can write
+
+$$x +iy = r\left[\cos(\theta) + i\sin(\theta)\right],\ \ r = |x+iy|$$
+
+In particular **unimodular** complex numbers, complex numbers whose norms are equal to $$1$$, are all of the form $$\cos(\theta) + i\sin(\theta)$$ for some angle $$\theta$$.  The angle itself simply determines its position on the unit circle in the complex plane.
+
+### Euler's Definition
+
+One of the many great contributions Euler gave to modern mathematics is the following *definition*
+
+$$e^{i\theta} = \cos(\theta) + i\sin(\theta).$$
+
+This equation is called **Euler's Formula**.  The wonderful thing about this formula is that this definition is mathematically consistent in every way we could possibly expect!  For example, using trigonometric identities we can verify
+
+$$(\cos(\theta)+i\sin(\theta))(\cos(\phi))+i\sin(\phi)) = \cos(\theta+\phi) + i\sin(\theta+\phi).$$
+
+This is consistent with what we would expect from the exponential identities
+
+$$e^{i\theta}e^{i\phi} = e^{i\theta + i\phi} = e^{i(\theta +\phi)}.$$
+
+Of course, there's a reason why this definition works so well.  If we think about the exponential function as an absolutely convergent Taylor series
+
+$$e^x = \sum_{n=0}^\infty \frac{x^n}{n!}$$
+
+then by replacing $x$ with $i\theta$ and using the Taylor series for $\sin(x)$ and $\cos(x)$, we obtain
+
+$$\begin{align*}
+e^{i\theta}
+  &amp; = \sum_{n=0}^\infty \frac{(i\theta)^n}{n!}\\
+  &amp; = \sum_{n=0}^\infty \frac{(i\theta)^{2n}}{(2n)!} + \sum_{n=0}^\infty \frac{(i\theta)^{2n+1}}{(2n+1)!} \\
+  &amp; = \sum_{n=0}^\infty \frac{(-1)^n\theta^{2n}}{(2n)!} + i\sum_{n=0}^\infty \frac{(-1)^n\theta^{2n+1}}{(2n+1)!} \\
+  &amp; = \cos(\theta) + i\sin(\theta)
+\end{align*}$$</content><author><name>William Casper</name><email>wcasper@fullerton.edu</email></author><summary type="html">## Review of Complex Numbers ### Basic Definition A **complex number** is a number of the form</summary></entry><entry><title type="html">Sets Relations Functions</title><link href="/2021/01/19/sets-relations-functions.html" rel="alternate" type="text/html" title="Sets Relations Functions" /><published>2021-01-19T00:00:00-08:00</published><updated>2021-01-19T00:00:00-08:00</updated><id>/2021/01/19/sets-relations-functions</id><content type="html" xml:base="/2021/01/19/sets-relations-functions.html">&lt;h2 id=&quot;sets-relations-and-functions&quot;&gt;Sets, Relations, and Functions&lt;/h2&gt;
+
+&lt;h3 id=&quot;sets&quot;&gt;Sets&lt;/h3&gt;
+
+&lt;p&gt;The notion of a &lt;strong&gt;set&lt;/strong&gt; is the foundation of all of formal mathematics.  Intuitively, a set is a collection of objects (called elements), like the set of all positive real numbers, or the set of all letters in the English alphabet.  However, we cannot explicitly define what a set is, due to introduction of various paradoxes that inevitably result such as &lt;a href=&quot;https://en.wikipedia.org/wiki/Russell%27s_paradox&quot;&gt;Russell’s paradox&lt;/a&gt;.  Instead, we pull a very clever run-around by forgoing any definition of what a set is and instead simply describing how it behaves.  These behaviors are encoded in terms of a set of rules called &lt;strong&gt;axioms&lt;/strong&gt;.  In this course, we will adopt the ZFC-axomatic system for sets, which includes the axiom of choice.  Furthermore, by and large the intuitive definition of a set will be sufficiently rigorous for the purposes of our presentation.&lt;/p&gt;
+
+&lt;p&gt;We assume that students have some familiarity with sets from previous math courses.  Still we present a very brief review of some of the basic notation and ideas.&lt;/p&gt;
+
+&lt;p&gt;Examples of sets include&lt;/p&gt;
+
+\[\begin{align*}
+A &amp;amp;= \{1,2,3,a,b,c\}\\
+B &amp;amp;= \{x: \text{$x$ is a real number and}\ 0\leq x \leq 2\}
+\end{align*}\]
+
+&lt;p&gt;The first set is in list &lt;strong&gt;notation&lt;/strong&gt;, where the elements of the set are simply listed out.  The second set is in &lt;strong&gt;set builder notation&lt;/strong&gt;, where the elements are determined by a specified condition.  A very important special example of a set is the &lt;strong&gt;empty set&lt;/strong&gt; \(\varnothing\) , which is the set not containing any elements.&lt;/p&gt;
+
+&lt;p&gt;We use the notation \(x\in A\) to mean that \(x\) is an element of the set \(A\).  The notation \(A\subseteq B\) means that \(A\) is a &lt;strong&gt;subset&lt;/strong&gt; of \(B\), ie that every element of \(A\) is also an element of \(B\).&lt;/p&gt;
+
+&lt;p&gt;There are several ways of building new sets from old ones by means of various set-theoretic operations.  Important examples include&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;union&lt;/strong&gt;&lt;/p&gt;
+
+\[A\cup B = \{x:x\in A\ \text{or}\ x\in B\}\]
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;intersection&lt;/strong&gt;&lt;/p&gt;
+
+\[A\cap B = \{x:x\in A\ \text{and}\ x\in B\}\]
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;cartesian product&lt;/strong&gt;&lt;/p&gt;
+
+\[A\times B = \{(x,y): x\in A\ \text{and}\ y\in B\}\]
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;power set&lt;/strong&gt;&lt;/p&gt;
+
+\[\mathcal P(A) = \{C: \text{$C$ is a subset of $A$}\}\]
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A &lt;strong&gt;partition&lt;/strong&gt; of a set \(A\) is a collection of subsets of \(A\) whose union forms all of \(A\).&lt;/p&gt;
+
+&lt;h3 id=&quot;relations&quot;&gt;Relations&lt;/h3&gt;
+
+&lt;p&gt;In mathematics, we are constantly trying to identify patterns and relationships, for example the relationship between \(x\) and \(y\)-coordinates in a parabola \(y=x^2\).  As such, it is imperative to have a formal way of describing various relationships.  One very slick way of accomplishing this is via the notion of a relation.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; A &lt;strong&gt;relation from a set \(A\) to a set \(B\)&lt;/strong&gt; is a subset \(\mathscr R\) of the cartesian product \(A\times B\).  If \(A=B\), then we say \(\mathscr R\) is a &lt;strong&gt;relation on \(A\).\(\)&lt;/strong&gt;  Notation-wise, we write \(a\mathscr Rb\) to mean that \((a,b)\in\mathscr R\).&lt;/p&gt;
+
+&lt;p&gt;Note that we don’t have to use a fancy R to denote a relation.  You can often see relations denoted by \(\sim\) or \(\equiv\), or even a letter like \(f\).  The choice of notation typically depends on the context or on the &lt;em&gt;kind&lt;/em&gt; of relation we are dealing with.  The tremendous flexibility of the concept of a relation allows is immediately apparent via the very diverse roles they play.  Let’s see some examples:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;  Let \(P\) be the set of all living people in the world.  We define a relation \(\mathscr R\) on \(P\) by saying \(x\mathscr Ry\) if \(x\) and \(y\) have a biological parent in common.  Thus for example (Venus Williams)\(\mathscr R\)(Serena Williams).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;  Let \(A=\{a,b,c,d\}\) and \(B = \{1,2,3,4\}\) and \(\mathscr R = \{(a,3),(b,2),(b,3)\}\).  Then \(\mathscr R\) is an equivalence relation from \(A\) to \(B\).  For example \(a\mathscr R3\) and \(b\mathscr R2\).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;  Let \(B\) be the set of all published books.  Define a relation \(\mathscr R\) from \(B\) to \(\mathbb N\) by saying \(x\mathscr R n\) if and only if \(n\) is the number of pages in book \(x\).&lt;/p&gt;
+
+&lt;p&gt;In the special case that \(\mathscr R\) is an equivalence relation on \(A\), we are typically interested in three specific properties.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt;   We call \(\mathscr R\)&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;reflexive&lt;/strong&gt; if \(x\mathscr Rx\) for all \(x\in A\)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;symmetric&lt;/strong&gt; if \(x\mathscr R y\) implies \(y\mathscr R x\) for all \(x,y\in A\)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;transitive&lt;/strong&gt; if \(x\mathscr R y\) and \(y\mathscr R z\) implies \(x\mathscr R z\) for all \(x,y,z\in A\)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A relation \(\mathscr R\) on \(A\) which is reflexive, symmetric, and transitive is called an &lt;strong&gt;equivalence relation&lt;/strong&gt;.  In this case, we define the &lt;strong&gt;equivalence class&lt;/strong&gt; of an element \(a\in A\) to be&lt;/p&gt;
+
+\[[a] = \{x\in A: a\mathscr Rx\}\]
+
+&lt;p&gt;The set of equivalence classes forms a partition of \(A\).  In fact, there is a natural one-to-one correspondence between partitions and equivalence classes.  Note that the first example above is actually an example of an equivalence relation.&lt;/p&gt;
+
+&lt;h3 id=&quot;functions&quot;&gt;Functions&lt;/h3&gt;
+
+&lt;p&gt;Functions are very familiar to us from our exploration in previous math courses.  The true, formal definition of functions is in terms of relations with special properties.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; A relation \(f\) from \(A\) to \(B\) is a &lt;strong&gt;function&lt;/strong&gt; if it satisfies the property that for every \(a\in A\) there exists a unique \(b\in B\) satisfying \(afb\).  In this case, we usually use a specialized notation \(f: A\rightarrow B\) to mean \(f\) is a function from \(A\) to \(B\) and write \(f(a)=b\) in place of \(afb\).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;  The relation \(\mathscr R\) from \(\mathbb Z\) to \([0,\infty)\) defined by saying \(n\mathscr Rx\) if and only if \(n=x^2\) is &lt;em&gt;not&lt;/em&gt; a function.  This is because there is no \(x\) such that \(-1\mathscr R x\)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;  The relation \(\mathscr R\) from \(\mathbb N\) to \(\mathbb R\) defined by saying \(n\mathscr Rx\) if and only if \(n=x^2\) is &lt;em&gt;not&lt;/em&gt; a function because there is more than one value of \(x\) satisfying \(1\mathscr Rx\), namely \(x=1\) and \(x=-1\).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;  The relation \(\mathscr R\) from \(\mathbb N\) to \([0,\infty)\) defined by saying \(n\mathscr Rx\) if and only if \(n=x^2\) is a function because every \(n\) has a unique \(x\) satisfying \(n\mathscr Rx\).  In this case, we could also have defined the relation in functional notation \(f: \mathbb N\rightarrow [0,\infty]\) by defining \(f(n)=\sqrt{n}\).&lt;/p&gt;
+
+&lt;p&gt;As we know, we are often interested in various properties of the function, such as injectivity, surjectivity, or bijectivity.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Definition:&lt;/strong&gt; A function \(f: A\rightarrow B\) is called&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;injective&lt;/strong&gt; or &lt;strong&gt;one-to-one&lt;/strong&gt; if for all \(a_1,a_2\in A\) with \(a_1\neq a_2\) we have \(f(a_1)\neq f(a_2)\).  In other words, \(f\) never maps different elements to the same place&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;surjective&lt;/strong&gt; or &lt;strong&gt;onto&lt;/strong&gt; if for all \(b\in B\) there exists \(a\in A\) with \(f(a)=b\)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;bijective&lt;/strong&gt; if it is both injective and surjective&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>William Casper</name><email>wcasper@fullerton.edu</email></author><summary type="html">Sets, Relations, and Functions Sets The notion of a set is the foundation of all of formal mathematics. Intuitively, a set is a collection of objects (called elements), like the set of all positive real numbers, or the set of all letters in the English alphabet. However, we cannot explicitly define what a set is, due to introduction of various paradoxes that inevitably result such as Russell’s paradox. Instead, we pull a very clever run-around by forgoing any definition of what a set is and instead simply describing how it behaves. These behaviors are encoded in terms of a set of rules called axioms. In this course, we will adopt the ZFC-axomatic system for sets, which includes the axiom of choice. Furthermore, by and large the intuitive definition of a set will be sufficiently rigorous for the purposes of our presentation. We assume that students have some familiarity with sets from previous math courses. Still we present a very brief review of some of the basic notation and ideas. Examples of sets include \[\begin{align*} A &amp;amp;= \{1,2,3,a,b,c\}\\ B &amp;amp;= \{x: \text{$x$ is a real number and}\ 0\leq x \leq 2\} \end{align*}\] The first set is in list notation, where the elements of the set are simply listed out. The second set is in set builder notation, where the elements are determined by a specified condition. A very important special example of a set is the empty set \(\varnothing\) , which is the set not containing any elements. We use the notation \(x\in A\) to mean that \(x\) is an element of the set \(A\). The notation \(A\subseteq B\) means that \(A\) is a subset of \(B\), ie that every element of \(A\) is also an element of \(B\). There are several ways of building new sets from old ones by means of various set-theoretic operations. Important examples include union \[A\cup B = \{x:x\in A\ \text{or}\ x\in B\}\] intersection \[A\cap B = \{x:x\in A\ \text{and}\ x\in B\}\] cartesian product \[A\times B = \{(x,y): x\in A\ \text{and}\ y\in B\}\] power set \[\mathcal P(A) = \{C: \text{$C$ is a subset of $A$}\}\] A partition of a set \(A\) is a collection of subsets of \(A\) whose union forms all of \(A\). Relations In mathematics, we are constantly trying to identify patterns and relationships, for example the relationship between \(x\) and \(y\)-coordinates in a parabola \(y=x^2\). As such, it is imperative to have a formal way of describing various relationships. One very slick way of accomplishing this is via the notion of a relation. Definition: A relation from a set \(A\) to a set \(B\) is a subset \(\mathscr R\) of the cartesian product \(A\times B\). If \(A=B\), then we say \(\mathscr R\) is a relation on \(A\).\(\) Notation-wise, we write \(a\mathscr Rb\) to mean that \((a,b)\in\mathscr R\). Note that we don’t have to use a fancy R to denote a relation. You can often see relations denoted by \(\sim\) or \(\equiv\), or even a letter like \(f\). The choice of notation typically depends on the context or on the kind of relation we are dealing with. The tremendous flexibility of the concept of a relation allows is immediately apparent via the very diverse roles they play. Let’s see some examples: Example: Let \(P\) be the set of all living people in the world. We define a relation \(\mathscr R\) on \(P\) by saying \(x\mathscr Ry\) if \(x\) and \(y\) have a biological parent in common. Thus for example (Venus Williams)\(\mathscr R\)(Serena Williams). Example: Let \(A=\{a,b,c,d\}\) and \(B = \{1,2,3,4\}\) and \(\mathscr R = \{(a,3),(b,2),(b,3)\}\). Then \(\mathscr R\) is an equivalence relation from \(A\) to \(B\). For example \(a\mathscr R3\) and \(b\mathscr R2\). Example: Let \(B\) be the set of all published books. Define a relation \(\mathscr R\) from \(B\) to \(\mathbb N\) by saying \(x\mathscr R n\) if and only if \(n\) is the number of pages in book \(x\). In the special case that \(\mathscr R\) is an equivalence relation on \(A\), we are typically interested in three specific properties. Definition: We call \(\mathscr R\) reflexive if \(x\mathscr Rx\) for all \(x\in A\) symmetric if \(x\mathscr R y\) implies \(y\mathscr R x\) for all \(x,y\in A\) transitive if \(x\mathscr R y\) and \(y\mathscr R z\) implies \(x\mathscr R z\) for all \(x,y,z\in A\) A relation \(\mathscr R\) on \(A\) which is reflexive, symmetric, and transitive is called an equivalence relation. In this case, we define the equivalence class of an element \(a\in A\) to be \[[a] = \{x\in A: a\mathscr Rx\}\] The set of equivalence classes forms a partition of \(A\). In fact, there is a natural one-to-one correspondence between partitions and equivalence classes. Note that the first example above is actually an example of an equivalence relation. Functions Functions are very familiar to us from our exploration in previous math courses. The true, formal definition of functions is in terms of relations with special properties. Definition: A relation \(f\) from \(A\) to \(B\) is a function if it satisfies the property that for every \(a\in A\) there exists a unique \(b\in B\) satisfying \(afb\). In this case, we usually use a specialized notation \(f: A\rightarrow B\) to mean \(f\) is a function from \(A\) to \(B\) and write \(f(a)=b\) in place of \(afb\). Example: The relation \(\mathscr R\) from \(\mathbb Z\) to \([0,\infty)\) defined by saying \(n\mathscr Rx\) if and only if \(n=x^2\) is not a function. This is because there is no \(x\) such that \(-1\mathscr R x\) Example: The relation \(\mathscr R\) from \(\mathbb N\) to \(\mathbb R\) defined by saying \(n\mathscr Rx\) if and only if \(n=x^2\) is not a function because there is more than one value of \(x\) satisfying \(1\mathscr Rx\), namely \(x=1\) and \(x=-1\). Example: The relation \(\mathscr R\) from \(\mathbb N\) to \([0,\infty)\) defined by saying \(n\mathscr Rx\) if and only if \(n=x^2\) is a function because every \(n\) has a unique \(x\) satisfying \(n\mathscr Rx\). In this case, we could also have defined the relation in functional notation \(f: \mathbb N\rightarrow [0,\infty]\) by defining \(f(n)=\sqrt{n}\). As we know, we are often interested in various properties of the function, such as injectivity, surjectivity, or bijectivity. Definition: A function \(f: A\rightarrow B\) is called injective or one-to-one if for all \(a_1,a_2\in A\) with \(a_1\neq a_2\) we have \(f(a_1)\neq f(a_2)\). In other words, \(f\) never maps different elements to the same place surjective or onto if for all \(b\in B\) there exists \(a\in A\) with \(f(a)=b\) bijective if it is both injective and surjective</summary></entry></feed>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Part 1 Intro To Groups | Math 407 Spring 2021</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="Part 1 Intro To Groups" />
+<meta name="author" content="William Casper" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Examples of Groups" />
+<meta property="og:description" content="Examples of Groups" />
+<meta property="og:site_name" content="Math 407 Spring 2021" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-01-21T00:00:00-08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Part 1 Intro To Groups" />
+<script type="application/ld+json">
+{"headline":"Part 1 Intro To Groups","dateModified":"2021-01-21T00:00:00-08:00","datePublished":"2021-01-21T00:00:00-08:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"/2021/01/21/part-1-intro-to-groups.html"},"url":"/2021/01/21/part-1-intro-to-groups.html","author":{"@type":"Person","name":"William Casper"},"description":"Examples of Groups","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Math 407 Spring 2021" />
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Math 407 Spring 2021</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Part 1 Intro To Groups</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2021-01-21T00:00:00-08:00" itemprop="datePublished">
+        Jan 21, 2021
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h2 id="examples-of-groups">Examples of Groups</h2>
+
+<h3 id="intuition">Intuition</h3>
+
+<p>Fundamentally, a group can be thought of as an abstract way of capturing mathematically a collection of ways that we can “transform” a particular object.  To help make sense of this, think for a second about a deck of playing cards.  We can transform the deck by rearranging the cards.  For example, we can “cut the deck” by switching the top 26 and bottom 26 cards.  Alternatively, to transform the deck we could take all the cards and sort them into their various suits in increasing order, and then stack them back together again.
+We put all of these different transformations into a set</p>
+
+\[G = \{g| g\ \text{is a way of rearranging a deck of $52$ cards}\}\]
+
+<p>and this set is what we will call a group.  Formally, what we mean by rearrangments is bijections from the set of \(52\) playing cards to itself.  The group we just described is a very nice example, called a permutation group.  By studying properties of this group, we can answer very interesting questions such as <a href="https://www.ams.org/publicoutreach/feature-column/fcarc-shuffle">how many shuffles does it take to randomize a deck of cards</a>.</p>
+
+<p>Of course, not every rickety assortment of transformations can be awarded the distinction of being a group.  We have standards after all!  The notion of what should distinguish a group from other sets of transformations arose simultaneously from three different areas of mathematics: symmetries in geometry, solutions of algebraic equations, and number theory.  Thus groups are defined so as to link together shared properties of the objects coming from these diverse subjects.  Informally, we should think of a group \(G\) as a set of transformations \(G\) which satisfies the following properties</p>
+<ul>
+  <li>the composition of two transformations in \(G\) (ie. doing one transformation and then another) is in \(G\)</li>
+  <li>composition is associative</li>
+  <li>every transformation in \(G\) is reversible by another transformation in \(G\)
+In the general setting, we can even drop the idea of the group elements being transformations.  We simply replace the notion of composition with some multiplicative or additive operation.  Later on, we’ll describe this as a <strong>binary operation</strong></li>
+</ul>
+
+<p>Below, we will explore some examples of groups representative of their historical origins.  In the first example, we again deal with a collection of transformations.  In the latter two examples, we think about the more general notion of a group as a set with a way of either multiplying or adding which is sufficiently nice.</p>
+
+<h3 id="more-examples-of-groups">More examples of groups</h3>
+<h4 id="symmetries-in-geometry">Symmetries in geometry</h4>
+<p>To begin, let’s think about the filled-in square \(\mathcal S = [-1,1]\times[-1,1]\) centered at the origin.  A <strong>(linear) symmetry</strong> of \(\mathcal S\) is a linear transformation \(T: \mathbb R^2\rightarrow\mathbb R^2\) which maps \(\mathcal S\) to itself.  For example, rotations are linear transformations and rotation by \(90\) degrees preserves the square, so a \(90\)-degree clockwise rotation is a symmetry of \(\mathcal S\).  This transformation can be represented as a function</p>
+
+\[T(x,y) = (y,-x)\]
+
+<p>or in terms of a \(2\times 2\) matrix</p>
+
+\[\left(\begin{array}{cc}
+0&amp; 1\\
+-1 &amp; 0
+\end{array}\right).\]
+
+<p>The set \(G\) of all symmetries of \(\mathcal S\) consists (in matrix notation) of</p>
+<ul>
+  <li>identity</li>
+</ul>
+
+\[\left(\begin{array}{cc}
+1 &amp; 0\\
+0 &amp; 1
+\end{array}\right)\]
+
+<ul>
+  <li>rotations</li>
+</ul>
+
+\[\left(\begin{array}{cc}
+0&amp; 1\\
+-1 &amp; 0
+\end{array}\right),\quad
+\left(\begin{array}{cc}
+-1&amp; 0\\
+ 0&amp;-1
+\end{array}\right),\quad
+\left(\begin{array}{cc}
+0&amp;-1\\
+1 &amp; 0
+\end{array}\right)\]
+
+<ul>
+  <li>reflections</li>
+</ul>
+
+\[\left(\begin{array}{cc}
+1 &amp; 0\\
+0 &amp;-1
+\end{array}\right),\quad
+\left(\begin{array}{cc}
+-1&amp; 0\\
+ 0&amp; 1
+\end{array}\right),\quad
+\left(\begin{array}{cc}
+0 &amp; 1\\
+1 &amp; 0
+\end{array}\right),\quad
+\left(\begin{array}{cc}
+ 0 &amp; -1\\
+-1 &amp; 0
+\end{array}\right).\]
+
+<p>This collection of \(8\) matrices forms a group, sometimes called the <strong>dihedral group</strong> \(D_4\).  More generally, one can consider the group of symmetries of an \(n\)-gon on the plane, obtaining the dihedral group \(D_n\).  In fact, we can extend this to higher dimensions and consider the symmetry groups of various polytopes, forming even more interesting groups.</p>
+
+<h4 id="solutions-of-algebraic-equations">Solutions of algebraic equations</h4>
+<p>Consider the set \(G\) of complex-valued solutions of an algebraic equation \(z^n=1\).  If \(z=a\) is a solution (ie. \(a^n=1\)), and \(z=b\) is also a solution, then \((ab)^n = a^nb^n=1\cdot 1 = 1\) and therefore \(z = ab\) is also a solution.  Furthermore if \(a\in G\) then \((1/a)^n = 1/a^n = 1\) and so \(z=1/a\) is a solution.  In other words, if \(a,b\in G\) then \(ab\in G\) and if \(a\in G\) then \(a^{-1}\in G\).  Thus \(G\) is a group.</p>
+
+<p>More generally, we can think about the set of roots of any polynomial equation \(p(z) = 0\).  Associated to any such equation is a very special group called the <a href="https://en.wikipedia.org/wiki/Galois_group">Galois Group</a>, which we will discuss later in this course.</p>
+
+<h4 id="number-theory">Number theory</h4>
+<p>One of the foundations of number theory is a clockwork-style addition for numbers called <strong>modular arithmetic</strong>.  To begin, fix a positive integer \(n\) and consider the set</p>
+
+\[\mathbb Z_n = \{0,1,2,3,\dots,n-1\}.\]
+
+<p>We define <strong>modular addition</strong> on \(\mathbb Z_n\) by setting</p>
+
+\[a +_n b = \text{remainder after dividing $a+b$ by $n$}.\]
+
+<p>This makes \(\mathbb Z_n\) into a group.  So for example</p>
+
+\[\begin{align*}
+2 +_5 3 &amp;= 0\\
+8 +_2 5 &amp;= 1\\
+4 +_7 9 &amp;= 6.
+\end{align*}\]
+
+<p>Note: the notation we use here is consistent with Fraleigh’s text, but is not the usual notation for this operation.  The latter is typically framed in terms of the notion of a <strong>quotient group</strong>, a topic of later discussion.</p>
+
+<p>This kind of weird addition is actually very intuitive if we think about how hours work on a clock.  If it’s currently 10:00 then in three hours it will be 1:00.  Fourteen hours after that, it will be 3:00.  Thus mathematically, we’re discovring that clock-addition works just like addition modulo \(12\):</p>
+
+\[\begin{align*}
+10 +_{12} 3 = 1\\
+1 +_{12} 14 = 3
+\end{align*}\]
+
+<p>We can also define a continuous form of modular addition for real numbers.  Fix a positive real number \(r&gt;0\) and consider the set</p>
+
+\[\mathbb R_r = [0,r).\]
+
+<p>We define modular addition on \(\mathbb R_r\) by setting</p>
+
+\[a+_rb = \left\lbrace\begin{array}{cc}
+a+b, &amp; \text{if $a+b&lt;r$}\\
+a+b-r, &amp; \text{if $a+b\geq r$}
+\end{array}\right.\]
+
+<p>Thus for example</p>
+
+\[\begin{align*}
+\sqrt{2} +_3 2 &amp;= \sqrt{2}-1\\
+4.3 +_5 + 2.1 &amp;= 1.4
+\end{align*}\]
+
+<p>This defines a group, and we can look to the unit circle for intuition.  In the unit circle, if we have an angle of \(7\pi/4\) radians and then we add \(\pi/2\) radians, then we have gone one full circle (\(2\pi\) radians), plus a bit extra, ending up at \(\pi/4\) radians.  In other words, radians in the unit circle work like modular addition modulo \(2\pi\).</p>
+
+\[7\pi/4 +_{2\pi} \pi/2 = \pi/4.\]
+
+<p>For this reason, we often identify \(\mathbb R_{2\pi}\) with the unit circle.</p>
+
+  </div><a class="u-url" href="/2021/01/21/part-1-intro-to-groups.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+        <ul class="contact-list">
+          <li class="p-name">William Casper</li>
+          <li><a class="u-email" href="mailto:wcasper@fullerton.edu">wcasper@fullerton.edu</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>Supplementary notes for a semester-long course in abstract algebra covering group theory and Galois theory.
+</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/jekyll" title="jekyll"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/jekyllrb" title="jekyllrb"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6">
+</script>
+<script id="MathJax-script" async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+

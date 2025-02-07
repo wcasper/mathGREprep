@@ -1,0 +1,4 @@
+\babel@toc {english}{}
+\beamer@sectionintoc {1}{Calculus Problems}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Standard problems}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Somewhat trickier problems}{14}{0}{1}
