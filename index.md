@@ -6,7 +6,7 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 #
 layout: home
-title: Math 407 Abstract Algebra
+title: Math GRE Prep
 ---
 
 <p align="center"><img src="fig/galois-theory.png"/></p>
