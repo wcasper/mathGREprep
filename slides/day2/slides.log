@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.16)  7 FEB 2025 13:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.16)  28 FEB 2025 11:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1232,12 +1232,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 169.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <5> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 169.
-
-Overfull \hbox (14.19073pt too wide) detected at line 169
-[] [] []
- []
-
-[9
+ [9
 
 ] [10
 
@@ -1246,25 +1241,6 @@ Overfull \hbox (14.19073pt too wide) detected at line 169
 ] [12
 
 ] [13
-
-] (./slides.toc) [14
-
-] [15
-
-] [16
-
-] [17
-
-] [18
-
-] [19
-
-] [20
-
-]
-[21
-
-] [22
 
 ]
 \tf@nav=\write6
@@ -1276,36 +1252,52 @@ Overfull \hbox (14.19073pt too wide) detected at line 169
 \tf@snm=\write8
 \openout8 = `slides.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 231.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 231.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 190.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 190.
  (./slides.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 231.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 231.
-Package rerunfilecheck Info: File `slides.out' has not changed.
-(rerunfilecheck)             Checksum: F53F1AF6BC095C7735513431C57A44AA;194.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 190.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 190.
+
+
+Package rerunfilecheck Warning: File `slides.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `slides.out':
+(rerunfilecheck)             Before: F53F1AF6BC095C7735513431C57A44AA;194
+(rerunfilecheck)             After:  A7A8CD7A67D44AE00A490055F46C80B6;118.
  ) 
 Here is how much of TeX's memory you used:
- 18245 strings out of 494847
- 339399 string characters out of 6179079
+ 18227 strings out of 494847
+ 339230 string characters out of 6179079
  414891 words of memory out of 5000000
  21069 multiletter control sequences out of 15000+600000
  49433 words of font info for 75 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  56i,19n,65p,773b,640s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on slides.pdf (22 pages, 122839 bytes).
+pdfTeX warning (dest): name{Navigation14} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Navigation22} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Outline0.1.2.14} has been referenced but does not e
+xist, replaced by a fixed one
+
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on slides.pdf (13 pages, 103006 bytes).
 PDF statistics:
- 753 PDF objects out of 1000 (max. 8388607)
- 696 compressed objects within 7 object streams
- 48 named destinations out of 1000 (max. 500000)
+ 484 PDF objects out of 1000 (max. 8388607)
+ 438 compressed objects within 5 object streams
+ 32 named destinations out of 1000 (max. 500000)
  115 words of extra memory for PDF output out of 10000 (max. 10000000)
 
