@@ -1,0 +1,208 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This file is a template using the "beamer" package to create slides for a talk or presentation
+% - Giving a talk on some subject.
+% - The talk is between 15min and 45min long.
+% - Style is ornate.
+
+% MODIFIED by Jonathan Kew, 2008-07-06
+% The header comments and encoding in this file were modified for inclusion with TeXworks.
+% The content is otherwise unchanged from the original distributed with the beamer package.
+
+\documentclass{beamer}
+
+
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice. 
+
+
+\mode<presentation>
+{
+  \usetheme{Warsaw}
+  % or ...
+
+  \setbeamercovered{transparent}
+  % or whatever (possibly just delete it)
+}
+
+
+\usepackage[english]{babel}
+% or whatever
+
+\usepackage[utf8]{inputenc}
+% or whatever
+
+\usepackage{mathrsfs}
+
+\usepackage{times}
+\usepackage[T1]{fontenc}
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+
+%%% MATH RELATED
+\usepackage{amsmath,amsthm,amssymb}
+\newtheorem{prob}{Problem}
+\newtheorem{idea}{Idea}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{conj}{Conjecture}
+\newtheorem{ex}{Example}
+
+\newcommand{\bbc}{\mathbb{C}}
+\newcommand{\bbr}{\mathbb{R}}
+\newcommand{\bbn}{\mathbb{N}}
+\newcommand{\Ai}{\text{Ai}}
+\newcommand{\Be}{\text{Be}}
+\newcommand{\wt}[1]{\widetilde{#1}}
+
+\title{Math GRE Prep Day 4} 
+\subtitle
+{} % (optional)
+
+\author[W.R. Casper] % (optional, use only with lots of authors)
+{W.R. Casper}
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[California State University Fullerton] % (optional, but mostly needed)
+{
+  Department of Mathematics\\
+  California State University Fullerton}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\subject{Talks}
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+% \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
+% \logo{\pgfuseimage{university-logo}}
+
+
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+%\beamerdefaultoverlayspecification{<+->}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+% Since this a solution template for a generic talk, very little can
+% be said about how it should be structured. However, the talk length
+% of between 15min and 45min and the theme suggest that you stick to
+% the following rules:  
+
+% - Exactly two or three sections (other than the summary).
+% - At *most* three subsections per section.
+% - Talk about 30s to 2min per frame. So there should be between about
+%   15 and 30 frames, all told.
+
+\section{Linear Algebra Problems}
+
+\subsection{Basic problems}
+
+\begin{frame}{Problem 1}
+If the matrices
+$$
+\left(\begin{array}{ccc}
+3 & -2 & -2\\
+1 & -1 & -1\\
+3 & -1 & -2
+\end{array}\right)
+,\quad\text{and}\quad
+\left(\begin{array}{ccc}
+ 1 & a & 0\\
+-1 & b & 1\\
+ 2 & c &-1
+\end{array}\right)
+$$
+are inverses of each other, what is the value of a,b, and c?
+\end{frame}
+
+\begin{frame}{Problem 2}
+In an homogeneous system of 5 linear equations with 7 unknowns, the rank of the coefficient matrix is 4. What is the maximum number of independent solution vectors?
+\end{frame}
+
+\begin{frame}{Problem 3}
+If $A$ is a square matrix of order $n \geq 4$, and $a_{ij} = i + j$ represents the entry
+in row $i$ and column $j$, then the rank of A is always
+\end{frame}
+
+\begin{frame}{Problem 4}
+ Given that $S$ and $T$ are subspaces of a vector space, which of the following
+are also subspaces?
+$$S\cap T,\ \ S\cup T,\ \ 2S.$$
+\end{frame}
+
+\begin{frame}{Problem 5}
+If $T$ is a linear transformation mapping vectors $(1, 0, 0)$, $(0, 1, 0)$ and $(0, 0, 1)$ to the vectors $(1, 2, 3)$, $(2, 3, 1)$ and $(1, 1, -2)$ respectively what vector is the image of the vector $(3, -2, 1)$ under $T$ ?
+\end{frame}
+
+\begin{frame}{Problem 6}
+Define linear operator $S$ and $T$ on the $xy$-plane ($\mathbb R^2$) as follows:\\
+$S$ rotates each vector $90$ degrees counterclockwise, and $T$ reflects each vector through the $y$-axis. If
+$ST$ and $TS$ denote the compositions $S\circ T$ and $T\circ S$, respectively, and $I$ is the identity map, which of the following statements is true?
+$$ST=I,\quad ST=-I,\quad TS=I,\quad TS=ST,\quad TS=-ST$$
+\end{frame}
+
+\begin{frame}{Problem 7}
+Let $T:\mathbb R^5\rightarrow\mathbb R^3$ be a linear transformation whose kernel is a three dimensional subspace of $\mathbb R^5$. Then is $\{T(x): x\in\mathbb R^5\}$ just the origin, or a line through the origin, or a plane through the origin, all of $\mathbb R^3$, or something else?  Is it possible to tell?
+\end{frame}
+
+\begin{frame}{Problem 8}
+Let $A$, $B$ and $C$ be real $2\times 2$ matrices, and let $0$ denote the $2\times 2$ zero
+matrix. Which of the following statements is/are true?
+\begin{enumerate}[(a)]
+\item $A^2=0$ implies $A=0$
+\item $AB=AC$ implies $B=C$
+\item $A$ is invertible and $A=A^{-1}$ implies $A=I$ or $A=-I$?
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Problem 9}
+If $V$, $W$ are $2$-dimensional subspaces of $\mathbb R^4$, then what are the possible dimensions of $V\cap W$?
+\end{frame}
+
+\begin{frame}{Problem 10}
+Suppose that $V$ is the vector space of real $2\times 3$ matrices. If $T$ is a linear transformation from $V$ onto $\mathbb R^4$ (ie. surjective!), then what is the dimension of the null space of $T$?
+\end{frame}
+
+\end{document}
+
+

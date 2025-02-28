@@ -1,0 +1,3 @@
+\babel@toc {english}{}
+\beamer@sectionintoc {1}{Linear Algebra Problems}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Basic problems}{3}{0}{1}
