@@ -1,0 +1,193 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This file is a template using the "beamer" package to create slides for a talk or presentation
+% - Giving a talk on some subject.
+% - The talk is between 15min and 45min long.
+% - Style is ornate.
+
+% MODIFIED by Jonathan Kew, 2008-07-06
+% The header comments and encoding in this file were modified for inclusion with TeXworks.
+% The content is otherwise unchanged from the original distributed with the beamer package.
+
+\documentclass{beamer}
+
+
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice. 
+
+
+\mode<presentation>
+{
+  \usetheme{Warsaw}
+  % or ...
+
+  \setbeamercovered{transparent}
+  % or whatever (possibly just delete it)
+}
+
+
+\usepackage[english]{babel}
+% or whatever
+
+\usepackage[utf8]{inputenc}
+% or whatever
+
+\usepackage{mathrsfs}
+
+\usepackage{times}
+\usepackage[T1]{fontenc}
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+
+%%% MATH RELATED
+\usepackage{amsmath,amsthm,amssymb}
+\newtheorem{prob}{Problem}
+\newtheorem{idea}{Idea}
+\newtheorem{defn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{conj}{Conjecture}
+\newtheorem{ex}{Example}
+
+\newcommand{\bbc}{\mathbb{C}}
+\newcommand{\bbr}{\mathbb{R}}
+\newcommand{\bbn}{\mathbb{N}}
+\newcommand{\Ai}{\text{Ai}}
+\newcommand{\Be}{\text{Be}}
+\newcommand{\wt}[1]{\widetilde{#1}}
+
+\title{Math GRE Prep Day 4} 
+\subtitle
+{} % (optional)
+
+\author[W.R. Casper] % (optional, use only with lots of authors)
+{W.R. Casper}
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[California State University Fullerton] % (optional, but mostly needed)
+{
+  Department of Mathematics\\
+  California State University Fullerton}
+% - Use the \inst command only if there are several affiliations.
+% - Keep it simple, no one is interested in your street address.
+
+\subject{Talks}
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+% \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
+% \logo{\pgfuseimage{university-logo}}
+
+
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+%\beamerdefaultoverlayspecification{<+->}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+% Since this a solution template for a generic talk, very little can
+% be said about how it should be structured. However, the talk length
+% of between 15min and 45min and the theme suggest that you stick to
+% the following rules:  
+
+% - Exactly two or three sections (other than the summary).
+% - At *most* three subsections per section.
+% - Talk about 30s to 2min per frame. So there should be between about
+%   15 and 30 frames, all told.
+
+\section{Calculus III Problems}
+
+\subsection{Basic problems}
+
+\begin{frame}{Problem 1}
+Find the Jacobian of the transformation 
+$$\left\lbrace\begin{array}{cc}
+u &= xe^{xy}\\
+v &= ye^{xy}\\
+\end{array}\right.$$
+\end{frame}
+
+\begin{frame}{Problem 2}
+Let $f(x,y) = x^3-axy+y^2-x$.
+For what values of $a$ does the function have a local minimum?
+\end{frame}
+
+\begin{frame}{Problem 3}
+Find $$\iint_R z dxdy$$ where $z=8xy$ and $R$ is the part of the unit disk in the first quadrant.
+\end{frame}
+
+\begin{frame}{Problem 4}
+Find the length of the parametric curve $x = \cos(t)e^{t}$ and $y = -\sin(t)e^t$ between $0<t<1$.
+\end{frame}
+
+\begin{frame}{Problem 5}
+If $\mathbf F = \langle 2y-2x,x^2+y\rangle$, find the value of $\int_C\mathbf{F}\cdot d\mathbf{r}$ where $C$ is the segment of the parabola $y=x^2$ starting from $(-1,1)$ and going to $(0,0)$.
+\end{frame}
+
+\begin{frame}{Problem 6}
+Let $C$ be the portion of the astroid $x^{2/3}+y^{3/2}=1$ from $(1,0)$ to $(0,1)$, which is parameterized by the equations
+$$x=\cos^3 t,\quad y=\sin^3 t,\ \ 0\leq t\leq \pi/2.$$
+Evaluate the integral
+$$\int_C(y\cos(xy)-1)dx + (1+x\cos(xy))dy$$
+\end{frame}
+
+\begin{frame}{Problem 7}
+Find all functions $f(x,y)$ satisfying $\frac{\partial f}{\partial x} = 2x + y$ and $\frac{\partial f}{\partial x} = x + 2y$.
+\end{frame}
+
+
+
+\begin{frame}{Problem 8}
+Find the point on the plane $2x + y + 3z = 3$ which is closest to the origin.
+\end{frame}
+
+\begin{frame}{Problem 9}
+Set up an integral which represents the volume of the solid bounded above
+by the graph of $z = 6 - x^2 - 2y^2$ and below by the graph of $z = -2 + x^2 + 2y^2$.
+\end{frame}
+
+\begin{frame}{Problem 10}
+Minimize the function $f(x, y, z) = x + 4z$ on the surface $x^2+y^2+z^2=1$.
+\end{frame}
+
+\end{document}
+
+
